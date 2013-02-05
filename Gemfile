@@ -6,8 +6,12 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'therubyracer', '0.11.3'
 
 gem 'json'
+
+group :development, :test do
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

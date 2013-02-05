@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  rating: 1
+  free_agency: 1
+  jersey_number: 1
+  years: 1
+  position: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  rating: 1
+  free_agency: 1
+  jersey_number: 1
+  years: 1
+  position: MyString
