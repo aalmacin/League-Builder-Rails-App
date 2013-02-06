@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206022636) do
+ActiveRecord::Schema.define(:version => 20130206033431) do
 
   create_table "champions", :force => true do |t|
     t.integer  "year"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20130206022636) do
   end
 
   create_table "games", :force => true do |t|
-    t.integer  "home_id"
-    t.integer  "away_id"
+    t.integer  "home_team"
+    t.integer  "away_team"
     t.boolean  "home_win"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
