@@ -37,6 +37,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    decent_exposure (2.0.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -46,6 +47,9 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
+    hashrocket-rails (0.0.6)
+      decent_exposure
+      haml-rails
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -118,6 +122,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml
   haml-rails
+  hashrocket-rails
   jquery-rails
   json
   rails (= 3.2.11)

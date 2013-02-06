@@ -3,7 +3,9 @@
 one:
   name: MyString
   city: MyString
+  conference: MyString
 
 two:
   name: MyString
   city: MyString
+  conference: MyString

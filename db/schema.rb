@@ -11,17 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205034011) do
+ActiveRecord::Schema.define(:version => 20130206022636) do
 
-  create_table "games", :force => true do |t|
-    t.integer  "home_id"
-    t.integer  "away_id"
-    t.boolean  "home_win"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "histories", :force => true do |t|
+  create_table "champions", :force => true do |t|
     t.integer  "year"
     t.integer  "champ_id"
     t.integer  "runner_up_id"
@@ -31,13 +23,20 @@ ActiveRecord::Schema.define(:version => 20130205034011) do
     t.datetime "updated_at",         :null => false
   end
 
+  create_table "games", :force => true do |t|
+    t.integer  "home_id"
+    t.integer  "away_id"
+    t.boolean  "home_win"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "players", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "rating"
+    t.integer  "team_id"
     t.integer  "free_agency"
     t.integer  "jersey_number"
-    t.integer  "years"
     t.string   "position"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130205034011) do
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.string   "city"
+    t.string   "conference"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
