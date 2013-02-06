@@ -1,2 +1,31 @@
-%h1 Teams#index
-%p Find me in app/views/teams/index.html.haml
+%h1 Teams
+
+%h2 West
+%table#west-teams
+  %tr
+    %th Team
+    %th Wins
+    %th Loses
+    %th % of winning
+  - @west_teams.each do |wt|
+    %tr
+      %td
+        = wt.city
+        = wt.name
+      %td
+      %td
+
+%h2 East
+%table#east-teams
+  %tr
+    %th Team
+    %th Wins
+    %th Loses
+    %th % of winning
+  - @east_teams.each do |wt|
+    %tr
+      %td
+        = wt.city
+        = wt.name
+      %td
+      %td
