@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'therubyracer', '0.11.3'
 gem 'haml'
+gem 'haml-rails'
 
 gem 'json'
 
