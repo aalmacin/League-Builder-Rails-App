@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20130208025323) do
 
   create_table "users", :force => true do |t|
     t.string   "password_digest"
+    t.integer  "current_year"
+    t.boolean  "draft_picked"
+    t.boolean  "season_started"
+    t.string   "game_type"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
