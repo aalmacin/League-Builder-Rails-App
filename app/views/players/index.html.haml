@@ -1,2 +1,29 @@
-%h1 Players#index
-%p Find me in app/views/players/index.html.haml
+%h1 Listing players
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Team
+    %th Free agency
+    %th Jersey number
+    %th Position
+    %th
+    %th
+    %th
+
+  - @players.each do |player|
+    %tr
+      %td= player.first_name
+      %td= player.last_name
+      %td= player.team_id
+      %td= player.free_agency
+      %td= player.jersey_number
+      %td= player.position
+      %td= link_to 'Show', player
+      %td= link_to 'Edit', edit_player_path(player)
+      %td= link_to 'Destroy', player, method => :delete, data => { confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Player', new_player_path
