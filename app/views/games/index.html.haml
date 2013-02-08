@@ -1,2 +1,4 @@
-%h1 Games#index
-%p Find me in app/views/games/index.html.haml
+%h1 Upcoming Games
+%ul
+- @games.each do |game|
+  %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)

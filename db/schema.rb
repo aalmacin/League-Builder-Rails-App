@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130208025323) do
   create_table "games", :force => true do |t|
     t.integer  "home_team_id"
     t.integer  "away_team_id"
+    t.string   "game_type"
     t.boolean  "home_win"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
