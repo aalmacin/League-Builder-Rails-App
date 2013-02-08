@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(:version => 20130208013335) do
   end
 
   create_table "games", :force => true do |t|
-    t.integer  "home_team"
-    t.integer  "away_team"
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
     t.boolean  "home_win"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "players", :force => true do |t|
