@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_filter :check_if_logged_in
   # GET /players
   # GET /players.json
   def index

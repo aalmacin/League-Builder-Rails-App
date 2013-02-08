@@ -28,3 +28,4 @@ teams.each do |team|
   Team.create(:name => team[0], :city => team[1], :conference => team[2])
 end
 
+User.create(:password => 'tatpomf')
