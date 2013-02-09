@@ -10,6 +10,7 @@ Jba::Application.routes.draw do
   get 'wildcard_games' => "games#wildcard"
   get 'playoff_games' => "games#playoffs"
   get 'confirm_winner' => "games#confirm_winner"
+  match 'assign_a_victor' => "games#assign_a_victor"
 
   match 'admin' => "admin#index"
   match 'confirm_admin' => "admin#confirm"

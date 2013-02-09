@@ -29,6 +29,12 @@ class GamesController < ApplicationController
 
   def confirm_winner
     @game = Game.find(params[:game_id])
-    @home_won = params[:home_won]
+    @home_win = params[:home_win]
+  end
+
+  def assign_a_victor
+    @game = Game.find(params[:game_id])
+    @game.update_attributes(:home_win => params[:home_win])
+    redirect_to games_path, :notice => 'Winner assigned'
   end
 end

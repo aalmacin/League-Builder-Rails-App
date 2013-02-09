@@ -1,0 +1,10 @@
+%h2 Confirm winner
+
+%p
+  \ Did
+  = (@home_win) ? full_name_of(@game.home_team) : full_name_of(@game.away_team)
+  \ Beat
+  = (!@home_win) ? full_name_of(@game.home_team) : full_name_of(@game.away_team)
+  \?
+= link_to 'Yes', {:controller => :games, :action => :assign_a_victor, :game_id => params[:game_id], :home_win => @home_win}
+= link_to 'No', games_path
