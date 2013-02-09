@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  before_filter :check_if_logged_in
   helper_method :back_to_admin_page_and_say
   def index
   end
