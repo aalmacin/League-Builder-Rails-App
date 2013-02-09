@@ -4,7 +4,14 @@
       %th Away Team
       %th &nbsp;
       %th Home Team
-      %th Winner
+      %th &nbsp;
+      %th &nbsp;
+      %th &nbsp;
     - @games.each do |game|
       %tr
-        %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)
+        %td= full_name_of(game.away_team)
+        %td V
+        %td= full_name_of(game.home_team)
+        %td= link_to 'Away won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => false} if game.home_win.nil?
+        %td= link_to 'Home won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => true} if game.home_win.nil?
+        %td= (game.home_win?) ? full_name_of(game.home_team) : full_name_of(game.away_team) unless game.home_win.nil?

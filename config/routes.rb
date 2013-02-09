@@ -9,6 +9,7 @@ Jba::Application.routes.draw do
   get 'crossroad_games' => "games#crossroads"
   get 'wildcard_games' => "games#wildcard"
   get 'playoff_games' => "games#playoffs"
+  get 'confirm_winner' => "games#confirm_winner"
 
   match 'admin' => "admin#index"
   match 'confirm_admin' => "admin#confirm"

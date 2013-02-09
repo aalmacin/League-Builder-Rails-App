@@ -1,10 +1,39 @@
 %h1 Upcoming Games
-#west_games
-  %ul
-  - @west_games.each do |game|
-    %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)
 
+%h2 West Games
+#west_games
+  %table
+    %tr
+      %th Away Team
+      %th &nbsp;
+      %th Home Team
+      %th &nbsp;
+      %th &nbsp;
+      %th &nbsp;
+    - @west_games.each do |west_game|
+      %tr
+        %td= full_name_of(west_game.away_team)
+        %td V
+        %td= full_name_of(west_game.home_team)
+        %td= link_to 'Away won', {:controller => :games, :action => :confirm_winner, :game_id => west_game.id, :home_win => false} if west_game.home_win.nil?
+        %td= link_to 'Home won', {:controller => :games, :action => :confirm_winner, :game_id => west_game.id, :home_win => true} if west_game.home_win.nil?
+        %td= (west_game.home_win?) ? full_name_of(west_game.home_team) : full_name_of(west_game.away_team) unless west_game.home_win.nil?
+
+%h2 East Games
 #east_games
-  %ul
-  - @east_games.each do |game|
-    %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)
+  %table
+    %tr
+      %th Away Team
+      %th &nbsp;
+      %th Home Team
+      %th &nbsp;
+      %th &nbsp;
+      %th &nbsp;
+    - @east_games.each do |east_game|
+      %tr
+        %td= full_name_of(east_game.away_team)
+        %td V
+        %td= full_name_of(east_game.home_team)
+        %td= link_to 'Away won', {:controller => :games, :action => :confirm_winner, :game_id => east_game.id, :home_win => false} if east_game.home_win.nil?
+        %td= link_to 'Home won', {:controller => :games, :action => :confirm_winner, :game_id => east_game.id, :home_win => true} if east_game.home_win.nil?
+        %td= (east_game.home_win?) ? full_name_of(east_game.home_team) : full_name_of(east_game.away_team) unless east_game.home_win.nil?

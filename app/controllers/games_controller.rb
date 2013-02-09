@@ -26,4 +26,9 @@ class GamesController < ApplicationController
 
   def playoffs
   end
+
+  def confirm_winner
+    @game = Game.find(params[:game_id])
+    @home_won = params[:home_won]
+  end
 end
