@@ -14,3 +14,5 @@
     = link_to 'Admin Page', admin_path
     = link_to 'Log out', logout_path
     = yield
+    - if flash[:notice]
+      %p= flash[:notice]
