@@ -3,12 +3,14 @@
 %table#west_teams
   %tr
     %th Team
+    %th GP
     %th W
     %th L
-    %th % of winning
+    %th W/L %
   - @west_teams.each do |west_team|
     %tr
       %td= full_name_of west_team
+      %td= number_of_games_played_by west_team
       %td= wins_of west_team
       %td= loses_of west_team
       %td= winning_percentage_of west_team
@@ -18,10 +20,11 @@
     %th Team
     %th W
     %th L
-    %th % of winning
+    %th W/L %
   - @east_teams.each do |east_team|
     %tr
       %td= full_name_of east_team
+      %td= number_of_games_played_by east_team
       %td= wins_of east_team
       %td= loses_of east_team
       %td= winning_percentage_of east_team
