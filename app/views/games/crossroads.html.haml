@@ -1,0 +1,10 @@
+#crossroad_games
+  %table
+    %tr
+      %th Away Team
+      %th &nbsp;
+      %th Home Team
+      %th Winner
+    - @games.each do |game|
+      %tr
+        %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)

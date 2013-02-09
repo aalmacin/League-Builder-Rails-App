@@ -1,4 +1,10 @@
 %h1 Upcoming Games
-%ul
-- @games.each do |game|
-  %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)
+#west_games
+  %ul
+  - @west_games.each do |game|
+    %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)
+
+#east_games
+  %ul
+  - @east_games.each do |game|
+    %li= full_name_of(game.away_team) + ' VS ' + full_name_of(game.home_team)

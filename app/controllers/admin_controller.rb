@@ -11,7 +11,12 @@ class AdminController < ApplicationController
       back_to_admin_page_and_say "Invalid confirmation password"
     else
       back_to_admin_page_and_say "Successfully updated"
-      update_the_season
+      if(params[:season_change_type])
+        update_the_season
+      end
+      if(params[:season_game_type])
+        update_the_game_type
+      end
     end
   end
 
@@ -27,5 +32,9 @@ class AdminController < ApplicationController
     else
       @user.update_attributes(:season_started => true)
     end
+  end
+
+  def update_the_game_type
+    @user.update_attributes(:game_type => params[:season_game_type])
   end
 end

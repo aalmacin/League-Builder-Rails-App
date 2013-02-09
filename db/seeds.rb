@@ -30,7 +30,7 @@ teams.each do |team|
   Team.create(:name => team[0], :city => team[1], :conference => team[2])
 end
 
-User.create(:password => 'tatpomf', :current_year => 2009, :draft_picked => false, :season_started => false)
+User.create(:password => 'tatpomf',:game_type => 'regular', :current_year => 2009, :draft_picked => false, :season_started => false)
 
 def create_games_for(team,game_type)
   team.each do |away_team|

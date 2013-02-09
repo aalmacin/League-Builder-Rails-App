@@ -6,6 +6,9 @@ Jba::Application.routes.draw do
   get 'teams' => "teams#index"
   get 'champions' => "champions#index"
   get 'login' => "sessions#new"
+  get 'crossroad_games' => "games#crossroads"
+  get 'wildcard_games' => "games#wildcard"
+  get 'playoff_games' => "games#playoffs"
 
   match 'admin' => "admin#index"
   match 'confirm_admin' => "admin#confirm"

@@ -1,4 +1,8 @@
 %h2 Update season.
 
-= link_to message_about_season, {:controller => 'admin',:action => 'confirm', :game_type => message_about_season}
+= link_to message_about_season, {:controller => 'admin',:action => 'confirm', :season_change_type => message_about_season}
 
+= form_tag confirm_admin_path do
+  = label_tag :season_game_type
+  = select :season,:game_type, season_game_types
+  = submit_tag 'Change season game type'
