@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def logged_in
@@ -26,9 +26,7 @@ class ApplicationController < ActionController::Base
   private
 
   def the_user
-    if logged_in
-      @user = User.first
-    end
+    @user = User.first
   end
   
   def season_started?

@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, :notice => "Logged in!"
     else
-      flash[:notice] = "Invalid email or password"
-      render "new"
+      redirect_to login_path, :notice => "Invalid password"
     end
   end
 
