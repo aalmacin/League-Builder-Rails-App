@@ -56,3 +56,14 @@ end
 create_games_for @west_teams,'west_conference'
 create_games_for @east_teams,'east_conference'
 create_crossroad_games_for @west_teams, @east_teams
+
+def champions
+  [['Turk Zaws','Benzone',1980,'Western Light','Nikolai Zhyamai'],['Turk Zaws','Benzone',1981,'Chidzan','Dexter Molte'],['Nikolai Zhyamai','Chillfer',1982,'Chidzan','Dexter Molte'],['Dexter Molte','Chidzan',1983,'Chillfer','Nikolai Zhyamai'],['Dexter Molte','Chidzan',1984,'Namatan','Ron Stakovkz'],['Scott Morres','Angel Pow',1985,'Benzone','Mullo Gomes'],['Kay Ray Wallace','Tinflea',1986,'Vondei','Dexter Kidd'],['Ronnie Casine','Tinflea',1987,'Vondei','Dexter Kidd'],['Hikko Dazchwata','Namatan',1989,'Tinflea','Ronnie Casine'],['Hikko Dazchwata','Namatan',1990,'Tinflea','Ronnie Casine'],['Hikko Dazchwata','Namatan',1991,'New Hitslovakia','Nong Garci'],['Mike Antonio','Chillfer',1992,'Chidzan','Gino Cy'],['Josh Parker','Zhyei',1993,'Western Light','Joseph Bird'],['Gino Cy','Bermuda',1994,'Western Light','Joseph Bird'],['Jean Howard','Western Light',1995,'Zellen',' JR Washington'],['Gino Cy','Bermuda',1996,'Chidzan','Rudy Hyong'],['Josh Parker','Zhyei',1997,'Centro Latido','Antonio Rodeo'],['Jean Howard','Western Light',1998,'Chillfer','Marco Cy'],['Rudolf Azirian','Tinflea',1999,'Namatan','Jacx De Real'],['Jacx De Real','Namatan',2000,'Tinflea','Rudolf Azirian'],['Rudolf Azirian','Namatan',2001,'Western Light','Jean Howard'],['Rudolf Azirian','Tinflea',2002,'Namatan','Rafer Douglas'],['Rafer Douglas','Namatan',2003,'Chidzan','Tix Zimmer'],['JJ Wash','Zellen',2004,'Ezckel',' Philly Moore'],['Stom Brown','Benzone',2005,'Western Light','Lickada Entore'],['Lickada Entore','Western Light',2006,'Zhyei','Dave Marshall'],['Greek Mustar','BenKay',2007,'Chidzan','Ali Tinsley']]
+end
+
+champions.each do |championship|
+  puts Team.find_by_city(championship[1]).inspect
+  puts Team.find_by_city(championship[3]).inspect
+  puts championship[2]
+  Champion.create(:champ_id => Team.find_by_city(championship[1]).id, :mvp_name => championship[0], :year => championship[2], :runner_up_id => Team.find_by_city(championship[3]).id, :runner_up_mvp_name => championship[4])
+end

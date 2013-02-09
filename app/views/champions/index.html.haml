@@ -1,2 +1,16 @@
-%h1 Champions#index
-%p Find me in app/views/champions/index.html.haml
+%h1 Championship History
+
+%table
+  %tr
+    %th MVP
+    %th Champion
+    %th Year
+    %th Runner-up
+    %th Runner-up MVP
+  - @championships.each do |championship|
+    %tr
+      %td= mvp_of_the championship
+      %td= victor_in_the championship
+      %td= year_of_the championship
+      %td= runner_up_of_the championship
+      %td= runner_up_mvp_in_the championship
