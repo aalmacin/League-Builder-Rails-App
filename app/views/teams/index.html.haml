@@ -9,9 +9,9 @@
   - @west_teams.each do |west_team|
     %tr
       %td= full_name_of west_team
-      %td TBA
-      %td TBA
-      %td TBA
+      %td= wins_of west_team
+      %td= loses_of west_team
+      %td= winning_percentage_of west_team
     
 %table#east_teams
   %tr
@@ -22,6 +22,6 @@
   - @east_teams.each do |east_team|
     %tr
       %td= full_name_of east_team
-      %td TBA
-      %td TBA
-      %td TBA
+      %td= wins_of east_team
+      %td= loses_of east_team
+      %td= winning_percentage_of east_team
