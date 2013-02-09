@@ -9,7 +9,7 @@
       %th Home Team
       %th &nbsp;
       %th &nbsp;
-      %th &nbsp;
+      %th Winner
     - @west_games.each do |west_game|
       %tr
         %td= full_name_of(west_game.away_team)
@@ -28,7 +28,7 @@
       %th Home Team
       %th &nbsp;
       %th &nbsp;
-      %th &nbsp;
+      %th Winner
     - @east_games.each do |east_game|
       %tr
         %td= full_name_of(east_game.away_team)

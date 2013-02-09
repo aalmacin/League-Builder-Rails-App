@@ -9,6 +9,11 @@ module TeamsHelper
   end
 
   def winning_percentage_of team
+    if (number_of_games_played_by team) > 0
+      return sprintf( "%0.3f", (wins_of team).to_f / (number_of_games_played_by team))
+    else
+      return '0.000'
+    end
   end
 
   def games_played_by team
@@ -17,5 +22,15 @@ module TeamsHelper
 
   def number_of_games_played_by team
     (games_played_by team).count
+  end
+
+  def sorted_data_for teams
+    teams.each do |team|
+      team[:games_played] = number_of_games_played_by team
+      team[:wins] = wins_of team
+      team[:loses] = loses_of team
+      team[:winning_percentage] = winning_percentage_of team
+    end
+    teams.sort {|t, other| other[:winning_percentage].to_f <=> t[:winning_percentage].to_f}
   end
 end
