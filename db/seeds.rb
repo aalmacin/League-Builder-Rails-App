@@ -275,6 +275,5 @@ def players
 end
 
 players.each do |player|
-  puts player[6].inspect
   Player.create(:position => player[0], :first_name => player[1], :last_name => player[2], :rating => player[3], :jersey_number => player[4], :free_agency => player[5], :team_id => player[6]) 
 end

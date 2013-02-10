@@ -22,4 +22,12 @@ module PlayersHelper
   def jersey_number_range
     00..99
   end
+
+  def free_agency_year
+    current_year..(current_year+6)
+  end
+
+  def teams_used_for_select
+    Team.all.collect {|t| [(full_name_of t), t.id]}
+  end
 end
