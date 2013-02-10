@@ -1,23 +1,26 @@
 %p#notice= notice
 
 %p
+  %b Position:
+  = @player.position
+%p
   %b First name:
   = @player.first_name
 %p
   %b Last name:
   = @player.last_name
 %p
-  %b Team:
-  = @player.team_id
-%p
-  %b Free agency:
-  = @player.free_agency
+  %b Rating
+  = @player.rating
 %p
   %b Jersey number:
   = @player.jersey_number
 %p
-  %b Position:
-  = @player.position
+  %b Free agency:
+  = @player.free_agency
+%p
+  %b Team:
+  = full_name_of Team.find @player.team_id
 
 = link_to 'Edit', edit_player_path(@player)
 \|
