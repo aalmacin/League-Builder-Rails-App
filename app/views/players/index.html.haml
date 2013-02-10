@@ -6,9 +6,8 @@
     %th Last name
     %th Team
     %th Free agency
-    %th Jersey number
+    %th Years
     %th Position
-    %th
     %th
     %th
 
@@ -16,13 +15,12 @@
     %tr
       %td= player.first_name
       %td= player.last_name
-      %td= player.team_id
+      %td= full_name_of Team.find(player.team_id)
       %td= player.free_agency
-      %td= player.jersey_number
+      %td= player.years
       %td= player.position
       %td= link_to 'Show', player
       %td= link_to 'Edit', edit_player_path(player)
-      %td= link_to 'Destroy', player, method => :delete, data => { confirm => 'Are you sure?' }
 
 %br
 
