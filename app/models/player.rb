@@ -1,3 +1,3 @@
 class Player < ActiveRecord::Base
-  attr_accessible :id, :rating, :first_name, :free_agency, :jersey_number, :last_name, :position, :team_id, :years
+  attr_accessible :position, :first_name, :last_name, :rating, :jersey_number, :free_agency, :team_id
 end

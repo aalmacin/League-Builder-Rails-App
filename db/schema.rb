@@ -33,14 +33,13 @@ ActiveRecord::Schema.define(:version => 20130208025323) do
   end
 
   create_table "players", :force => true do |t|
-    t.string   "first_name"
-    t.integer  "rating"
-    t.string   "last_name"
-    t.integer  "team_id"
-    t.integer  "free_agency"
-    t.integer  "jersey_number"
     t.string   "position"
-    t.integer  "years"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "rating"
+    t.integer  "jersey_number"
+    t.integer  "free_agency"
+    t.integer  "team_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
