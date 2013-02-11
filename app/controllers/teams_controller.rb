@@ -8,6 +8,6 @@ class TeamsController < ApplicationController
 
   def show_team_record
     @team = Team.find(params[:team_id])
-    @players = Player.where(:team_id => @team.id)
+    @players = Player.where(:team_id => @team.id).order('rating DESC')
   end
 end
