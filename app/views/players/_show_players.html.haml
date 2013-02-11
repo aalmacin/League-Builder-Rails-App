@@ -1,0 +1,23 @@
+%table
+  %tr
+    %th Position
+    %th First name
+    %th Last name
+    %th Rating
+    %th Jersey Number
+    %th Free Agency
+    %th Team
+    %th
+    %th
+
+  - @players.each do |player|
+    %tr
+      %td= player.position
+      %td= player.first_name
+      %td= player.last_name
+      %td= player.rating
+      %td= player.jersey_number
+      %td= player.free_agency
+      %td= full_name_of Team.find(player.team_id)
+      %td= link_to 'Show', player
+      %td= link_to 'Edit', edit_player_path(player)

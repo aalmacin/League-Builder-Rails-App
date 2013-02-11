@@ -9,7 +9,7 @@
     %th W/L %
   - (sorted_data_for @west_teams).each do |west_team|
     %tr
-      %td= full_name_of west_team
+      %td= link_to full_name_of(west_team), {:controller => :teams, :action => :show_team_record, :team_id => west_team.id}
       %td= number_of_games_played_by west_team
       %td= wins_of west_team
       %td= loses_of west_team
@@ -24,7 +24,7 @@
     %th W/L %
   - (sorted_data_for @east_teams).each do |east_team|
     %tr
-      %td= full_name_of east_team
+      %td= link_to full_name_of(east_team), {:controller => :teams, :action => :show_team_record, :team_id => east_team.id}
       %td= number_of_games_played_by east_team
       %td= wins_of east_team
       %td= loses_of east_team

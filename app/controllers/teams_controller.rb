@@ -5,4 +5,9 @@ class TeamsController < ApplicationController
     @west_teams = Team.where(:conference => 'W')
     @east_teams = Team.where(:conference => 'E')
   end
+
+  def show_team_record
+    @team = Team.find(params[:team_id])
+    @players = Player.where(:team_id => @team.id)
+  end
 end

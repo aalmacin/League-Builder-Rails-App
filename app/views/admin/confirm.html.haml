@@ -2,7 +2,7 @@
   .field
     - if params[:season_change_type]
       = hidden_field_tag :season_change_type, params[:season_change_type]
-    - if params[:season][:game_type]
+    - if params[:season]
       = hidden_field_tag :season_game_type, params[:season][:game_type]
     = label_tag :password 
     = password_field_tag :password 
