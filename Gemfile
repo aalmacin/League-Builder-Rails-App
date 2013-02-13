@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate'
+gem 'twitter-bootstrap-rails'
 
 gem 'json'
 
