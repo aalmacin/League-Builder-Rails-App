@@ -10,6 +10,7 @@ gem 'therubyracer', '0.11.3'
 gem 'haml'
 gem 'haml-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'will_paginate'
 
 gem 'json'
 
