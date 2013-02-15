@@ -6,16 +6,20 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %h1
-      \ JBA
-      = @user.current_year.to_s if @user
-    = link_to 'Home', root_path
-    = link_to 'Players', players_path
-    = link_to 'Team Standings', teams_path
-    = link_to 'Games', games_path
-    = link_to 'Champions', champions_path
-    = link_to 'Admin Page', admin_path
-    = link_to 'Log out', logout_path
-    = yield
-    - if flash[:notice]
-      %p= flash[:notice]
+    .container-fluid
+      .row-fluid
+        .span10
+          = yield
+        .span2
+          %h1
+            \ JBA
+            = @user.current_year.to_s if @user
+          %p= link_to 'Home', root_path
+          %p= link_to 'Players', players_path
+          %p= link_to 'Team Standings', teams_path
+          %p= link_to 'Games', games_path
+          %p= link_to 'Champions', champions_path
+          %p= link_to 'Admin Page', admin_path
+          %p= link_to 'Log out', logout_path
+          - if flash[:notice]
+            %p= flash[:notice]
