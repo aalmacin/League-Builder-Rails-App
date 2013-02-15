@@ -142,6 +142,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   therubyracer
   therubyrhino
+  therubyracer (= 0.11.3)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   will_paginate
