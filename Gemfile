@@ -6,11 +6,14 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'therubyracer', '0.11.3'
+gem 'therubyracer'
+gem 'therubyrhino'
 gem 'haml'
 gem 'haml-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'json'
 

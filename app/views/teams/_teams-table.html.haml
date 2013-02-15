@@ -1,0 +1,14 @@
+.row
+  %p.span2 Team
+  %p.span1 Gms
+  %p.span1 Wins
+  %p.span1 Loses
+  %p.span1 Win %
+
+- (sorted_data_for teams).each do |team|
+  .row
+    %p.span2= link_to full_name_of(team), {:controller => :teams, :action => :show_team_record, :team_id => team.id}
+    %p.span1= number_of_games_played_by team
+    %p.span1= wins_of team
+    %p.span1= loses_of team
+    %p.span1= winning_percentage_of team
