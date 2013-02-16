@@ -1,12 +1,12 @@
-.container-fluid
-  .row-fluid
-    %p.span4.center Away Team
-    %p.span4.center Home Team
-    %p.span4.center Winner
+%table.table.table-striped.table-bordered
+  %tr
+    %th.text-center{:colspan => 2} Away Team
+    %th.text-center{:colspan => 2} Home Team
+    %th.text-center{:colspan => 2} Winner
   - games.each do |game|
-    .row-fluid
-      %p.span2= link_to 'Away won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => false} if game.home_win.nil?
-      %p.span2= full_name_of(game.away_team)
-      %p.span2= full_name_of(game.home_team)
-      %p.span2= link_to 'Home won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => true} if game.home_win.nil?
-      %p.span4= (game.home_win?) ? full_name_of(game.home_team) : full_name_of(game.away_team) unless game.home_win.nil?
+    %tr
+      %td= link_to 'Away won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => false} if game.home_win.nil?
+      %td= full_name_of(game.away_team)
+      %td= full_name_of(game.home_team)
+      %td= link_to 'Home won', {:controller => :games, :action => :confirm_winner, :game_id => game.id, :home_win => true} if game.home_win.nil?
+      %td= (game.home_win?) ? full_name_of(game.home_team) : full_name_of(game.away_team) unless game.home_win.nil?
