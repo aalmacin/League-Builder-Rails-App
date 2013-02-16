@@ -14,12 +14,13 @@
           %h1
             \ JBA
             = @user.current_year.to_s if @user
-          %p= link_to 'Home', root_path
-          %p= link_to 'Players', players_path
-          %p= link_to 'Team Standings', teams_path
-          %p= link_to 'Games', games_path
-          %p= link_to 'Champions', champions_path
-          %p= link_to 'Admin Page', admin_path
-          %p= link_to 'Log out', logout_path
+          %ul.nav.nav-stacked.nav-tabs
+            %li= link_to 'Home', root_path
+            %li= link_to 'Players', players_path
+            %li= link_to 'Team Standings', teams_path
+            %li= link_to 'Games', games_path
+            %li= link_to 'Champions', champions_path
+            %li= link_to 'Admin Page', admin_path
+            %li= link_to 'Log out', logout_path
           - if flash[:notice]
             %p= flash[:notice]
