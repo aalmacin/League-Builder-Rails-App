@@ -1,5 +1,7 @@
 %h2 Team Standings
 
+%h3 West
 = render :partial => 'teams-table', :locals => {:teams => @west_teams}
+%h3 East
 = render :partial => 'teams-table', :locals => {:teams => @east_teams}
 
