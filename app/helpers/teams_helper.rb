@@ -31,6 +31,7 @@ module TeamsHelper
       team[:loses] = loses_of team
       team[:winning_percentage] = winning_percentage_of team
     end
-    teams.sort {|t, other| other[:winning_percentage].to_f <=> t[:winning_percentage].to_f}
+    t = teams.sort_by {|t| [t.winning_percentage,t.wins,-t.loses]}
+    t.reverse
   end
 end
