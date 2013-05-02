@@ -13,6 +13,4 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-*.swp
-*.swo
-/db/seeds.rb
+*.sw?
